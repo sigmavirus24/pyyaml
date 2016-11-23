@@ -8,10 +8,10 @@ if [[ "${TOXENV}" = pypy* ]]; then
     pyenv install "pypy-$PYPY_VERSION"
     pyenv global "pypy-$PYPY_VERSION"
 
-    pip install --upgrade tox
-
     pyenv rehash
 fi
 
-
+python -m pip install --upgrade virtualenv
+python -m virtualenv ~/.venv
+source ~/.venv/bin/activate
 pip install --upgrade tox
